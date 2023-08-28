@@ -1,7 +1,5 @@
-import Navigation from "../Navigation";
+import Navigation from '../Navigation';
 
-const Rockets = () => (
-    <Navigation />
-);
+const Rockets = () => <Navigation />;
 
 export default Rockets;

@@ -1,7 +1,5 @@
-import Navigation from "../Navigation";
+import Navigation from '../Navigation';
 
-const Missions = () => (
-    <Navigation />
-);
+const Missions = () => <Navigation />;
 
 export default Missions;

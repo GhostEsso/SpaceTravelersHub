@@ -1,7 +1,5 @@
-import Navigation from "../Navigation";
+import Navigation from '../Navigation';
 
-const MyProfile = () => (
-    <Navigation />
-);
+const MyProfile = () => <Navigation />;
 
 export default MyProfile;
