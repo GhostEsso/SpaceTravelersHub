@@ -7,21 +7,21 @@ const initialState = {
   error: null,
 };
 
-// je vais aller chercher les informations sur les fusées depuis internet
+// We are going to fetch data for rockets from the api
 export const FetchData = createAsyncThunk('get/rockets', async () => {
   const rockets = await axios.get('https://api.spacexdata.com/v3/rockets');
   return rockets.data;
 });
 
-// Maintenant je crée un endroit pour ranger les informations sur les fusées
+// Create a store in order to range fetched data
 export const Rocket = createSlice({
   name: 'Rockets',
   initialState,
   extraReducers(builder) {
     builder
-      // Quand je finis de chercher les infos sur les fusées et que tout va bien
+      // after fetching data, if it's okay
       .addCase(FetchData.fulfilled, (state, { payload }) => {
-        state.status = false; //  j'ai fini de chercher
+        state.status = false; //searching is ok 
         const data = payload.map((rocket) => ({
           rocket_id: rocket.id,
           rocket_name: rocket.name,
