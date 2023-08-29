@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const FetchData = createAsyncThunk('get/rockets', async () => {
   const rockets = await axios.get('https://api.spacexdata.com/v4/rockets');
-  const data = rockets.data;
+  const { data } = rockets;
   return data.map((rocket) => ({
     id: rocket.id,
     rocket_name: rocket.name,
