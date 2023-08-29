@@ -1,23 +1,24 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { reserveRocket } from '../../redux/rockets/RocketsSlice';
 import { FetchData } from '../../redux/rockets/Api';
-import styles from './rocket.css';
+import styles from './rocket.module.css';
 
-const Lists = () => {
+const RocketList = () => {
   const { rockets, status, error } = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
+  console.log(rockets);
 
   useEffect(() => {
     dispatch(FetchData());
   }, [dispatch]);
 
   if (status) {
-    return <div className="loading">...Loading</div>;
+    return 'Loading...';
   }
 
   if (error) {
-    return <div className="error">There is an error</div>;
+    return 'An error occurred';
   }
 
   return (
@@ -30,8 +31,14 @@ const Lists = () => {
           <div className="details">
             <h2>{rocket.rocket_name}</h2>
             <p>{rocket.description}</p>
-            <button className={`${rocket.reserved ? styles.reserve : styles.unreserve}`} onClick={() => dispatch(reserveRocket(rocket.id))} type="button">
-              {rocket.reserved ? 'Cancel reservation' : 'Reserve Rocket' }
+            <button
+              className={`${
+                rocket.reserved ? styles.reserve : styles.unreserve
+              }`}
+              onClick={() => dispatch(reserveRocket(rocket.id))}
+              type="button"
+            >
+              {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
             </button>
           </div>
         </section>
@@ -40,4 +47,4 @@ const Lists = () => {
   );
 };
 
-export default Lists;
+export default RocketList;
