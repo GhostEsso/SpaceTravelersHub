@@ -1,0 +1,25 @@
+.reserve {
+  background-color: rgb(255, 255, 255);
+  color: #7a7676;
+  width: 12vw;
+}
+
+.unreserve {
+  background-color: rgb(144, 144, 226);
+}
+
+button {
+  width: 10vw;
+  height: 5vh;
+  border: 0.1px solid black;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 3px;
+  transition: 0.5s;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: rgb(10, 10, 212);
+  color: #fff;
+}

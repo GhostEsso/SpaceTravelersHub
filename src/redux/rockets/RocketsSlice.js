@@ -16,7 +16,7 @@ const Rocketslice = createSlice({
   reducers: {
     // Action to reserve or cancel the reservation of a rocket
     reserveRocket: (state, { payload }) => {
-    // Traverse the rocket array to update the reservation  
+    // Traverse the rocket array to update the reservation
       const rockets = state.rockets.map((rocket) => {
         if (rocket.id === payload) return { ...rocket, reserved: !rocket.reserved };
         return rocket;
