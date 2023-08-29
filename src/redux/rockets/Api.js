@@ -1,13 +1,10 @@
-// Import necessary dependencies
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// I will fetch rocket information from the internet
 export const FetchData = createAsyncThunk('get/rockets', async () => {
-  // Use Axios API to retrieve data from the provided URL
-  const { data: rockets } = await axios.get('https://api.spacexdata.com/v3/rockets');
-  // Transform the received data to match my desired structure
-  return rockets.map((rocket) => ({
+  const rockets = await axios.get('https://api.spacexdata.com/v4/rockets');
+  const data = rockets.data;
+  return data.map((rocket) => ({
     id: rocket.id,
     rocket_name: rocket.name,
     description: rocket.description,
@@ -15,5 +12,4 @@ export const FetchData = createAsyncThunk('get/rockets', async () => {
   }));
 });
 
-// Default export of the FetchData function
 export default FetchData;
