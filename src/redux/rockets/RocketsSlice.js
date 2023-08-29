@@ -21,7 +21,7 @@ export const Rocket = createSlice({
     builder
       // When I'm done looking up the rocket info and it's alright
       .addCase(FetchData.fulfilled, (state, { payload }) => {
-        state.status = false; //  j'ai fini de chercher
+        state.status = false; //  searching finished
         const data = payload.map((rocket) => ({
           rocket_id: rocket.id,
           rocket_name: rocket.name,
