@@ -32,20 +32,3 @@
 .details p {
   padding-right: 5px;
 }
-
-.rocketbtn {
-  width: 10vw;
-  height: 5vh;
-  background-color: #007bff;
-  border: none;
-  color: #fff;
-  border-radius: 3px;
-  transition: 0.5s;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.rocketbtn:hover {
-  background-color: #094c94;
-  color: #000;
-}

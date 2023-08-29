@@ -1,18 +1,19 @@
 .reserve {
   background-color: rgb(255, 255, 255);
-  color: #7a7676;
+  color: #000000;
   width: 12vw;
 }
 
 .unreserve {
-  background-color: rgb(144, 144, 226);
+  background-color: #007bff;
+  color: white;
 }
 
 button {
   width: 10vw;
   height: 5vh;
-  border: 0.1px solid black;
-  color: #fff;
+  border: 0.1px solid #007bff;
+  color: #000000;
   background-color: #007bff;
   border-radius: 3px;
   transition: 0.5s;
@@ -20,6 +21,6 @@ button {
 }
 
 button:hover {
-  background-color: rgb(10, 10, 212);
+  background-color: rgb(56, 56, 168);
   color: #fff;
 }
