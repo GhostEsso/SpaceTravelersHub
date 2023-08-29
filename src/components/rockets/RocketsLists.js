@@ -6,12 +6,12 @@ import styles from './rocket.module.css';
 
 const RocketList = () => {
   const { rockets, status, error } = useSelector((state) => state.rockets);
-  const dispatch = useDispatch();
+  const Dispatch = useDispatch();
   console.log(rockets);
 
   useEffect(() => {
-    dispatch(FetchData());
-  }, [dispatch]);
+    Dispatch(FetchData());
+  }, [Dispatch]);
 
   if (status) {
     return 'Loading...';
@@ -24,7 +24,7 @@ const RocketList = () => {
   return (
     <div className="rocketContainer">
       {rockets.map((rocket) => (
-        <section className="Space" key={rocket.id}>
+        <section className="Space" key={rocket.rocket_id}>
           <div className="img">
             <img src={rocket.rocket_flickr_images} alt="" />
           </div>
@@ -35,7 +35,7 @@ const RocketList = () => {
               className={`${
                 rocket.reserved ? styles.reserve : styles.unreserve
               }`}
-              onClick={() => dispatch(reserveRocket(rocket.id))}
+              onClick={() => Dispatch(reserveRocket(rocket.id))}
               type="button"
             >
               {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
