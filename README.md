@@ -132,11 +132,11 @@ I have added the linters or tests in order to avoid anykind of typos and ensure 
 - Twitter: [@twitterhandle](https://twitter.com/errytage)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/errytagedesigns/)
 
-👤 Joyce Cruz
+👤 **Essohanam TAMBANA**
 
-- GitHub: [@githubhandle](https://github.com/balatstar)
-- Twitter: [@twitterhandle](https://twitter.com/balatstar)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/joyce-ann-cruz-668a41a7/)
+- GitHub: [@GhostEsso](https://github.com/GhostEsso)
+- Twitter: [@TambanaEssohanam](https://twitter.com/TambanaEssohana)
+- LinkedIn: [@TambanaEssohanam](https://www.linkedin.com/in/essohanam-tambana-62aa081a1/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
