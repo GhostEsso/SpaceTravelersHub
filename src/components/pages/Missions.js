@@ -1,5 +1,12 @@
-import Navigation from '../Navigation';
+import React from 'react';
+import MissionCard from '../MissionCard/MissionCard';
 
-const Missions = () => <Navigation />;
+function Missions() {
+  return (
+    <div className="">
+      <MissionCard />
+    </div>
+  );
+}
 
 export default Missions;
