@@ -19,10 +19,13 @@ button {
   border-radius: 3px;
   transition: 0.5s;
   font-size: 14px;
+  cursor: pointer;
 }
 
-button:hover {
-  background-color: rgb(97, 97, 233);
-  border: 0.1px solid rgb(56, 56, 168);
+.badge {
+  background-color: rgb(75, 181, 165);
   color: #fff;
+  border-radius: 2px;
+  margin: 0 4px;
+  padding: 2px 3px;
 }
