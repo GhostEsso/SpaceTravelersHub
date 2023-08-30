@@ -1,5 +1,5 @@
 .reserve {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(233, 176, 176);
   color: #000;
   border: 0.1px solid black;
   width: 12vw;
@@ -8,6 +8,7 @@
 .unreserve {
   background-color: #007bff;
   color: white;
+  border: 0.1px solid black;
 }
 
 button {

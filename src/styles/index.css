@@ -7,7 +7,6 @@ ul {
   flex-direction: row;
   width: 100%;
   padding: 0 10px;
-  border-top: 0.2px solid black;
 }
 
 .missions {

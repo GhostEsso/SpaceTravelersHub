@@ -30,8 +30,9 @@ A Space Travelers' Hub Porject developed with React, gitflow, githubflow, and Bo
 
 1-HTML
 2-CSS
-3-JS
-4-React
+3-BOOTSTRAP
+4-JS
+5-React
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -106,7 +107,7 @@ I have added the linters or tests in order to avoid anykind of typos and ensure 
 - in order to run the linter test on index.html:
 
 ```sh
- npx styleint "**/*.{css,scss}"
+ npx stylelint "**/*.{css,scss}"
 ```
 
 ```sh
