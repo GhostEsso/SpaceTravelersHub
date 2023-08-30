@@ -6,6 +6,7 @@ import Missions from './components/pages/Missions';
 import MyProfile from './components/pages/MyProfile';
 import './styles/header.css';
 import './styles/rockets.css';
+import './styles/index.css';
 
 const App = () => (
   <BrowserRouter>
