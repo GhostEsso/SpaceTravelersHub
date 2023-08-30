@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import Navigation from '../Navigation';
 
 const MyProfile = () => {
   // Make sure you're using the correct slice name here
@@ -7,7 +6,6 @@ const MyProfile = () => {
 
   return (
     <>
-      <Navigation />
       <section className="myProfileContainer">
         {/* Bro Sodeeq will implement the SectionA(Missions) here */}
         <div className="sectionB">

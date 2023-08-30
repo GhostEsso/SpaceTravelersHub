@@ -11,14 +11,39 @@ const initialState = {
   missionData: [],
   isLoading: true, // Indicator to track if the search is in progress
   error: null, // Store any errors
+  joinedMissions: [],
 };
 
 const missionSlice = createSlice({
   name: 'mission',
   initialState,
   reducers: {
-    add: (state, action) => {
-      state.missionData.push(action.payload);
+    joinMission: (state, action) => {
+      const missionId = action.payload;
+
+      const updatMission = state.missionData.map((mission) => (mission.mission_id === missionId
+        ? { ...mission, reserved: true }
+        : mission));
+
+      return {
+        ...state,
+        missionData: updatMission,
+        joinedMissions: [...state.joinedMissions, missionId],
+      };
+    },
+    leaveMission: (state, action) => {
+      const missionId = action.payload;
+
+      const index = state.joinedMissions.indexOf(missionId);
+      if (index !== -1) {
+        state.joinedMissions.splice(index, 1);
+      }
+      return {
+        ...state,
+        missionData: state.missionData.map((mission) => (mission.mission_id === missionId
+          ? { ...mission, reserved: false }
+          : mission)),
+      };
     },
   },
   extraReducers: (builder) => {
@@ -41,6 +66,6 @@ const missionSlice = createSlice({
   },
 });
 
-// export const { add } = missionSlice.actions;
+export const { joinMission, leaveMission } = missionSlice.actions;
 export const selectMission = (state) => state.mission;
 export default missionSlice.reducer;

@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Spinner } from 'react-bootstrap';
-import { getMissions, selectMission } from '../../redux/Mission/MissionSice';
+import {
+  getMissions,
+  joinMission,
+  leaveMission,
+  selectMission,
+} from '../../redux/Mission/MissionSice';
 import './MissionCard.css';
 
 function MissionCard() {
@@ -12,6 +17,14 @@ function MissionCard() {
   useEffect(() => {
     dispatch(getMissions());
   }, [dispatch]);
+
+  const handleToggleMission = (missionId, reserved) => {
+    if (reserved) {
+      dispatch(leaveMission(missionId));
+    } else {
+      dispatch(joinMission(missionId));
+    }
+  };
 
   return (
     <div>
@@ -32,10 +45,14 @@ function MissionCard() {
             <div className="col-2">{/* <h3>Status</h3> */}</div>
           </header>
 
-          {missions.missionData.map((mission) => (
+          {missions.missionData.map((mission, idx) => (
             <section
               key={mission.mission_id}
-              className="col-12 d-flex flex-row border"
+              className={
+                idx % 2 === 0
+                  ? 'col-12 d-flex dark flex-row border'
+                  : 'col-12 d-flex white flex-row border'
+              }
             >
               <div className="col-2">
                 <h3>
@@ -48,13 +65,20 @@ function MissionCard() {
                 <p>{mission.description}</p>
               </div>
               <div className="col-2 d-flex justify-content-center align-items-center">
-                <button className="notMember col-10" type="button">
-                  Not a member
+                <button
+                  className={mission.reserved ? 'activeMember' : 'notMember'}
+                  type="button"
+                >
+                  {mission.reserved ? 'active member' : 'not a member'}
                 </button>
               </div>
               <div className="col-2 d-flex justify-content-center align-items-center">
-                <button className="join col-10" type="button">
-                  Join Mission
+                <button
+                  onClick={() => handleToggleMission(mission.mission_id, mission.reserved)}
+                  className={mission.reserved ? 'leave col-10' : 'join col-10'}
+                  type="button"
+                >
+                  {mission.reserved ? 'Leave Mission' : 'Join Mission'}
                 </button>
               </div>
             </section>

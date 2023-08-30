@@ -15,17 +15,35 @@ button {
   border: none !important;
 }
 
-section {
+.dark {
   background-color: #f2f2f2;
 }
 
-.notMember {
-  background: #6d757d;
-  color: #fff;
+.white {
+  background-color: #fff;
 }
 
 .join {
   background: transparent;
   border: solid 1px #6d757d !important;
   color: #6d757d;
+}
+
+.leave {
+  background: transparent;
+  border: solid 1px #f00 !important;
+  color: #f00;
+}
+
+.notMember {
+  background: #6d757d;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.activeMember {
+  background-color: #25a2b7;
+  color: #fff;
+  font-weight: 700;
 }
