@@ -42,4 +42,5 @@ const missionSlice = createSlice({
 });
 
 // export const { add } = missionSlice.actions;
+export const selectMission = (state) => state.mission;
 export default missionSlice.reducer;

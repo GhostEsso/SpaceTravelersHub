@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import planet from '../assets/planet.png';
 
 const Navigation = () => (
-  <header>
+  <header className="border-bottom mb-5 py-2">
     <div>
       <img src={planet} alt="logo" />
       <h1>Space Travelers&apos; Hub</h1>
