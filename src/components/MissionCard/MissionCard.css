@@ -1,0 +1,49 @@
+.missionCard h3 {
+  font-size: 1rem;
+}
+
+.missionCard p {
+  font-size: 0.8rem;
+}
+
+.missionCard div {
+  border-right: solid 1px #dee2e6;
+  padding: 0.8em 0.5em;
+}
+
+button {
+  border: none !important;
+}
+
+.dark {
+  background-color: #f2f2f2;
+}
+
+.white {
+  background-color: #fff;
+}
+
+.join {
+  background: transparent;
+  border: solid 1px #6d757d !important;
+  color: #6d757d;
+}
+
+.leave {
+  background: transparent;
+  border: solid 1px #f00 !important;
+  color: #f00;
+}
+
+.notMember {
+  background: #6d757d;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.activeMember {
+  background-color: #25a2b7;
+  color: #fff;
+  font-weight: 700;
+}

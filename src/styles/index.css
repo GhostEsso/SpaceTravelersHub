@@ -1,0 +1,54 @@
+ul {
+  padding: 0;
+}
+
+.myProfileContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.missions {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 0.2px solid rgb(194, 184, 184);
+  height: 100%;
+  gap: 0;
+}
+
+.missions li {
+  border-bottom: 1px solid rgb(194, 184, 184);
+  padding: 20px 15px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.rockets {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 0.2px solid rgb(194, 184, 184);
+  height: 100%;
+  gap: 0;
+}
+
+.rockets li {
+  border-bottom: 1px solid rgb(194, 184, 184);
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.sectionA {
+  flex: 1;
+  padding: 10px 0;
+}
+
+.sectionB {
+  padding: 10px;
+  flex: 1;
+}
