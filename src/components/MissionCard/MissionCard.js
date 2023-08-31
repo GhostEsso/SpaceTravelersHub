@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Spinner } from 'react-bootstrap';
 import {
-  // getMissions,
   joinMission,
   leaveMission,
   selectMission,
@@ -12,11 +11,6 @@ import './MissionCard.css';
 function MissionCard() {
   const dispatch = useDispatch();
   const { missionData, isLoading } = useSelector(selectMission);
-  console.log(missionData);
-
-  // useEffect(() => {
-  //   dispatch(getMissions());
-  // }, [dispatch]);
 
   const handleToggleMission = (missionId, reserved) => {
     if (reserved) {
@@ -43,7 +37,6 @@ function MissionCard() {
           <div className="col-2">
             <h3>Status</h3>
           </div>
-          <div className="col-2">{/* <h3>Status</h3> */}</div>
         </header>
 
         {missionData.map((mission, idx) => (

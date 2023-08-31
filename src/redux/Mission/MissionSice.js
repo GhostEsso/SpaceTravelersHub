@@ -7,7 +7,7 @@ export const getMissions = createAsyncThunk(
   async (_, thunkAPI) => {
     // Fetch the data only if it doesn't exist in the store
     const state = thunkAPI.getState();
-    console.log(state);
+
     if (state.mission.missionData.length === 0) {
       const resp = await axios.get('https://api.spacexdata.com/v3/missions');
       return resp.data;

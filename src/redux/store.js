@@ -10,7 +10,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-// import thunk from 'redux-thunk';
 
 import Rocketslice from './rockets/RocketsSlice';
 import MissionSice from './Mission/MissionSice';

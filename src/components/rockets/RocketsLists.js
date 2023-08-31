@@ -5,7 +5,6 @@ import styles from './rocket.module.css';
 const RocketList = () => {
   const { rockets, status, error } = useSelector((state) => state.rockets);
   const Dispatch = useDispatch();
-  console.log(rockets);
 
   if (status) {
     return 'Loading...';
