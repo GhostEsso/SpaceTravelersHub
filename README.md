@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-  <h3><b>Space Travelers' Hub</b></h3>
+  <h3><b>Space Travelers'  Hub</b></h3>
 
 # 📗 Table of Contents
 
