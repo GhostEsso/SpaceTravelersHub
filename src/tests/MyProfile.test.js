@@ -2,9 +2,9 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { it, expect } from '@jest/globals';
 import MyProfile from '../components/pages/MyProfile';
 import store from '../redux/store';
-import { it, expect } from '@jest/globals';
 
 it('renders correctly', () => {
   const missions = [
@@ -14,7 +14,7 @@ it('renders correctly', () => {
   ];
   const rockets = [
     { id: 1, rocket_name: 'Mission 1', reserved: true },
-    { id: 2, rocket_name: 'Mission 2',  reserved: false },
+    { id: 2, rocket_name: 'Mission 2', reserved: false },
     // Add more mission objects as needed
   ];
 
@@ -23,7 +23,7 @@ it('renders correctly', () => {
       <BrowserRouter>
         <MyProfile missions={missions} rockets={rockets} />
       </BrowserRouter>
-    </Provider>
+    </Provider>,
   );
 
   expect(container).toMatchSnapshot();
