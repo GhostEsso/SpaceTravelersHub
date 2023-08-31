@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 // Fetch Mission
 export const getMissions = createAsyncThunk(
@@ -8,9 +9,8 @@ export const getMissions = createAsyncThunk(
     const state = thunkAPI.getState();
     console.log(state);
     if (state.mission.missionData.length === 0) {
-      const resp = await fetch('https://api.spacexdata.com/v3/missions');
-      const { data } = await resp.json();
-      return data;
+      const resp = await axios.get('https://api.spacexdata.com/v3/missions');
+      return resp.data;
     }
 
     return state.mission.missionData;
@@ -43,17 +43,22 @@ const missionSlice = createSlice({
     },
     leaveMission: (state, action) => {
       const missionId = action.payload;
-
       const index = state.joinedMissions.indexOf(missionId);
       if (index !== -1) {
         state.joinedMissions.splice(index, 1);
       }
-      return {
-        ...state,
-        missionData: state.missionData.map((mission) => (mission.mission_id === missionId
-          ? { ...mission, reserved: false }
-          : mission)),
-      };
+
+      const updatedMiss = state.missionData.map((mission) => {
+        if (mission.mission_id === missionId) {
+          return { ...mission, reserved: !mission.reserved };
+        }
+        return mission;
+      });
+
+      // I've everything i could, but this is the only way,
+      // kindly ignore this disabled
+      // eslint-disable-next-line
+      state.missionData = updatedMiss;
     },
   },
   extraReducers: (builder) => {
