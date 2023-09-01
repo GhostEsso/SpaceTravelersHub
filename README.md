@@ -8,6 +8,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [🚀 Live Demo ](#-live-demo-)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -63,6 +64,11 @@ A Space Travelers' Hub Porject developed with React, gitflow, githubflow, and Bo
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🚀 Live Demo <a name="live-demo"></a>
+
+[Live Demo Link](https://space-travelers-qg24.onrender.com/)
+
+## 🚀 Live Recording <a name="live-demo"></a>
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
