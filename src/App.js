@@ -10,6 +10,8 @@ import { FetchData } from './redux/rockets/Api';
 import Rockets from './components/rockets/Rockets';
 import Missions from './components/pages/Missions';
 import MyProfile from './components/pages/MyProfile';
+import Home from './components/Home/Home';
+import './styles/app.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -23,12 +25,15 @@ function App() {
   }, [dispatch]);
   return (
     <Router>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Rockets />} />
-        <Route path="/missions" element={<Missions />} />
-        <Route path="/my-profile" element={<MyProfile />} />
-      </Routes>
+      <div className="app-container">
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/rockets" element={<Rockets />} />
+          <Route path="/missions" element={<Missions />} />
+          <Route path="/my-profile" element={<MyProfile />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

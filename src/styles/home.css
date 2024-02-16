@@ -1,0 +1,8 @@
+.home-container {
+  position: relative;
+  justify-content: right;
+  font-size: 3em;                              
+  color: rgb(241, 245, 245); /* Ajoute de l'espace en bas du titre */
+  font-weight: 900;
+}
+  

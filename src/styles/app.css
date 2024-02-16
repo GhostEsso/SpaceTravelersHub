@@ -1,0 +1,19 @@
+/* Dans le fichier CSS (App.css) */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .app-container {
+    background-image: url('../../src/assets/bg.jpeg'); /* Ajuste le chemin de ton image */
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh; /* Ajuste la hauteur minimale de la page */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Ajoute d'autres styles selon tes besoins */
+  

@@ -6,7 +6,9 @@ ul {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100vh;
   padding: 0 10px;
+  background-color: white;
 }
 
 .missions {
