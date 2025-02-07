@@ -2,18 +2,27 @@
   background-color: rgb(233, 176, 176);
   color: #000;
   border: 0.1px solid black;
-  width: 12vw;
+  width: auto;
+  min-width: 150px;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
 }
 
 .unreserve {
   background-color: #007bff;
   color: white;
   border: 0.1px solid black;
+  width: auto;
+  min-width: 150px;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
 }
 
 button {
-  width: 10vw;
-  height: 5vh;
+  width: auto;
+  min-width: 150px;
+  height: auto;
+  min-height: 40px;
   border: 0.1px solid #007bff;
   color: #000;
   background-color: #007bff;
@@ -21,6 +30,8 @@ button {
   transition: 0.5s;
   font-size: 14px;
   cursor: pointer;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
 }
 
 .badge {
@@ -29,4 +40,15 @@ button {
   border-radius: 2px;
   margin: 0 4px;
   padding: 2px 3px;
+}
+
+@media (max-width: 768px) {
+  .reserve,
+  .unreserve,
+  button {
+    width: 100%;
+    max-width: 200px;
+    font-size: 13px;
+    padding: 0.5rem;
+  }
 }
