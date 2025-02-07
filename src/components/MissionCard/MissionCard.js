@@ -1,6 +1,6 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Spinner } from 'react-bootstrap';
 import {
   joinMission,
   leaveMission,
@@ -10,7 +10,7 @@ import './MissionCard.css';
 
 function MissionCard() {
   const dispatch = useDispatch();
-  const { missionData, isLoading } = useSelector(selectMission);
+  const { missionData, isLoading, error } = useSelector(selectMission);
 
   const handleToggleMission = (missionId, reserved) => {
     if (reserved) {
@@ -21,63 +21,60 @@ function MissionCard() {
   };
 
   if (isLoading) {
-    return <Spinner />;
+    return (
+      <div className="loading-container">
+        <div className="loading-spinner" />
+        <p>Loading missions...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="error-container">
+        <p>Error: {error}</p>
+      </div>
+    );
   }
 
   return (
-    <div>
-      <main className="card missionCard d-flex flex-column">
-        <header className="col-12">
-          <div className="col-2">
-            <h3> Mission</h3>
-          </div>
-          <div className="col-6">
-            <h3>Description</h3>
-          </div>
-          <div className="col-2">
-            <h3>Status</h3>
-          </div>
-        </header>
+    <div className="missionCard">
+      <header>
+        <h3>Mission</h3>
+        <h3>Description</h3>
+        <h3>Status</h3>
+        <h3>Action</h3>
+      </header>
 
-        {missionData.map((mission, idx) => (
-          <section
-            key={mission.mission_id}
-            className={
-              idx % 2 === 0
-                ? 'col-12 d-flex dark flex-row border'
-                : 'col-12 d-flex white flex-row border'
-            }
-          >
-            <div className="col-2">
-              <h3>
-                {' '}
-                {mission.mission_name}
-                {' '}
-              </h3>
+      <div className="mission-list">
+        {missionData.map((mission) => (
+          <div key={mission.mission_id} className="mission-row">
+            <div className="mission-name">
+              {mission.mission_name}
             </div>
-            <div className="col-6">
-              <p>{mission.description}</p>
+
+            <div className="mission-description">
+              {mission.description}
             </div>
-            <div className="col-2 d-flex justify-content-center align-items-center">
+
+            <div className="status-container">
+              <span className={`status-badge ${mission.reserved ? 'active-member' : 'not-member'}`}>
+                {mission.reserved ? 'Active Member' : 'Not A Member'}
+              </span>
+            </div>
+
+            <div className="action-container">
               <button
-                className={mission.reserved ? 'activeMember' : 'notMember'}
                 type="button"
-              >
-                {mission.reserved ? 'active member' : 'not a member'}
-              </button>
-            </div>
-            <div className="col-2 d-flex justify-content-center align-items-center">
-              <button
                 onClick={() => handleToggleMission(mission.mission_id, mission.reserved)}
-                className={mission.reserved ? 'leave col-10' : 'join col-10'}
-                type="button"
+                className={`action-button ${mission.reserved ? 'leave-button' : 'join-button'}`}
               >
                 {mission.reserved ? 'Leave Mission' : 'Join Mission'}
               </button>
             </div>
-          </section>
+          </div>
         ))}
-      </main>
+      </div>
     </div>
   );
 }

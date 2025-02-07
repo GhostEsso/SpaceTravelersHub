@@ -5,7 +5,7 @@ import { FetchData } from './Api';
 // Initial Redux slice state
 const initialState = {
   rockets: [], // Empty array to store rocket information
-  status: true, // Indicator to track if the search is in progress
+  status: 'loading', // Indicator to track if the search is in progress
   error: null, // Store any errors
 };
 
@@ -24,13 +24,23 @@ const Rocketslice = createSlice({
       return { ...state, rockets }; // Return the new state with the updated rocket array
     },
   },
-  extraReducers(builder) {
-    // Handling asynchronous actions such as FetchData
+  extraReducers: (builder) => {
     builder
+      .addCase(FetchData.pending, (state) => ({
+        ...state,
+        status: 'loading',
+        error: null,
+      }))
       .addCase(FetchData.fulfilled, (state, action) => ({
         ...state,
-        rockets: action.payload, // Update the rocket data in the state
-        status: false, // Indicates that the search is finished
+        status: 'succeeded',
+        rockets: action.payload,
+        error: null,
+      }))
+      .addCase(FetchData.rejected, (state, action) => ({
+        ...state,
+        status: 'failed',
+        error: action.payload,
       }));
   },
 });

@@ -3,16 +3,203 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    min-height: 100vh;
+    color: #333;
   }
   
   .app-container {
-    background-image: url('../../src/assets/bg.jpeg'); /* Ajuste le chemin de ton image */
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 100vh; /* Ajuste la hauteur minimale de la page */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding-top: 72px;
+    position: relative;
+    z-index: 1;
+    background-color: #f8f9fa;
+  }
+  
+  /* Style spécifique pour la page d'accueil */
+  .home-container {
+    flex: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/bg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin: -72px 0 0;
+    min-height: 100vh;
+    color: white;
+  }
+  
+  .home-content {
+    max-width: 1200px;
+    width: 90%;
+    text-align: center;
+    padding: 3.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 1s ease-in;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .title {
+    font-size: 4rem;
+    margin: 0 0 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .subtitle {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: normal;
+    opacity: 0.9;
+    margin-top: 1.5rem;
+    color: #00b894;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .main-text {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    margin: 3rem auto;
+    color: #f1f1f1;
+    max-width: 800px;
+  }
+  
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 4rem;
+    padding: 0 2rem;
+  }
+  
+  .feature-item {
+    padding: 3rem 2.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  .feature-item h3 {
+    font-size: 1.8rem;
+    margin: 0 0 1.5rem;
+    color: #00b894;
+  }
+  
+  .feature-item p {
+    font-size: 1.2rem;
+    margin: 0 0 2rem;
+    line-height: 1.6;
+  }
+  
+  .cta-link {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #0984e3;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+  }
+  
+  .cta-link:hover {
+    background: #0773c5;
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Media queries pour la réactivité */
+  @media (max-width: 768px) {
+    .home-container {
+      margin: -64px 0 0;
+      padding: 1rem;
+    }
+  
+    .home-content {
+      width: 95%;
+      padding: 2rem;
+    }
+  
+    .title {
+      font-size: 2.8rem;
+    }
+  
+    .subtitle {
+      font-size: 1.4rem;
+    }
+  
+    .main-text {
+      font-size: 1.1rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+  
+    .features {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 0;
+    }
+  
+    .feature-item {
+      padding: 2rem 1.5rem;
+    }
+  
+    .feature-item h3 {
+      font-size: 1.5rem;
+    }
+  
+    .feature-item p {
+      font-size: 1rem;
+    }
+  
+    .cta-link {
+      padding: 0.8rem 1.8rem;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Style pour le contenu principal des autres pages */
+  main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    background: white;
+    border-radius: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Support pour les navigateurs plus anciens */
+  @supports not (backdrop-filter: blur(3px)) {
+    .home-content {
+      background: rgba(0, 0, 0, 0.5);
+    }
   }
   
   /* Ajoute d'autres styles selon tes besoins */

@@ -6,14 +6,18 @@ export const FetchData = createAsyncThunk(
     const state = thunkAPI.getState();
 
     if (state.rockets.rockets.length === 0) {
-      const rockets = await fetch('https://api.spacexdata.com/v4/rockets');
-      const data = rockets.json();
-      return data.map((rocket) => ({
-        id: rocket.id,
-        rocket_name: rocket.name,
-        description: rocket.description,
-        rocket_flickr_images: rocket.flickr_images[0],
-      }));
+      try {
+        const response = await fetch('https://api.spacexdata.com/v4/rockets');
+        const data = await response.json();
+        return data.map((rocket) => ({
+          id: rocket.id,
+          rocket_name: rocket.name,
+          description: rocket.description,
+          rocket_flickr_images: rocket.flickr_images[0],
+        }));
+      } catch (error) {
+        return thunkAPI.rejectWithValue('Erreur lors du chargement des rockets');
+      }
     }
 
     return state.rockets.rockets;
