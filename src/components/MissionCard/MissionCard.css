@@ -165,14 +165,56 @@
 
   .mission-name {
     font-size: 1rem;
+    padding: 0.5rem 0;
   }
 
   .mission-description {
     font-size: 0.9rem;
+    padding: 0.5rem 0;
   }
 
   .status-container,
   .action-container {
     padding: 0.5rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .action-button {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    height: auto;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    z-index: 2;
+  }
+
+  .join-button,
+  .leave-button {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .join-button:active,
+  .leave-button:active {
+    transform: scale(0.98);
+  }
+
+  .status-badge {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
   }
 }

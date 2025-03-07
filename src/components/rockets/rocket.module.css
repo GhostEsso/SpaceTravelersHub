@@ -1,54 +1,74 @@
-.reserve {
+.reserve,
+.unreserve {
   background-color: rgb(233, 176, 176);
   color: #000;
-  border: 0.1px solid black;
+  border: 1px solid #d63031;
   width: auto;
   min-width: 150px;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1.5rem;
   white-space: nowrap;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  display: inline-block;
+  position: relative;
+  z-index: 5;
 }
 
 .unreserve {
   background-color: #007bff;
   color: white;
-  border: 0.1px solid black;
-  width: auto;
-  min-width: 150px;
-  padding: 0.5rem 1rem;
-  white-space: nowrap;
+  border: 1px solid #007bff;
 }
 
-button {
-  width: auto;
-  min-width: 150px;
-  height: auto;
-  min-height: 40px;
-  border: 0.1px solid #007bff;
-  color: #000;
-  background-color: #007bff;
-  border-radius: 3px;
-  transition: 0.5s;
-  font-size: 14px;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  white-space: nowrap;
+.reserve:hover,
+.reserve:active {
+  background-color: #d63031;
+  color: white;
+}
+
+.unreserve:hover,
+.unreserve:active {
+  background-color: #0056b3;
 }
 
 .badge {
   background-color: rgb(75, 181, 165);
   color: #fff;
-  border-radius: 2px;
-  margin: 0 4px;
-  padding: 2px 3px;
+  border-radius: 4px;
+  margin: 0 8px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 768px) {
-  .reserve,
-  .unreserve,
-  button {
-    width: 100%;
-    max-width: 200px;
-    font-size: 13px;
-    padding: 0.5rem;
+  button.unreserve,
+  button.reserve {
+    width: 100% !important;
+    max-width: 250px !important;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    height: auto;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+  }
+
+  button.unreserve:active,
+  button.reserve:active {
+    transform: scale(0.98);
   }
 }

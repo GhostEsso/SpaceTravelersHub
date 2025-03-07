@@ -35,8 +35,8 @@ const Navigation = () => {
           <span />
         </button>
 
-        <nav>
-          <ul className={`${styles.navLinks} ${isMenuOpen ? styles.active : ''}`}>
+        <nav className={isMenuOpen ? styles.active : ''}>
+          <ul className={styles.navLinks}>
             <li>
               <NavLink
                 to="/"

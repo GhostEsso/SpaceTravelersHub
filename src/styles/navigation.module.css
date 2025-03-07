@@ -150,7 +150,7 @@
 
   .hamburger {
     display: flex;
-    position: static;
+    position: relative;
     margin-left: 0;
     transform: none;
     flex-shrink: 0;
@@ -164,7 +164,16 @@
     left: 0;
     width: 100%;
     height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
     z-index: 1001;
+  }
+
+  nav.active {
+    opacity: 1;
+    visibility: visible;
   }
 
   .navLinks {
@@ -180,9 +189,10 @@
     gap: 2rem;
     transition: all 0.3s ease;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
   }
 
-  .navLinks.active {
+  nav.active .navLinks {
     right: 0;
   }
 
@@ -191,5 +201,12 @@
     width: 100%;
     text-align: center;
     padding: 1rem;
+    display: block;
+    color: #2d3436;
+    z-index: 1002;
+  }
+
+  .navLink:active {
+    background: rgba(9, 132, 227, 0.1);
   }
 } 

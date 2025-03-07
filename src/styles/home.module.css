@@ -1,0 +1,244 @@
+.homeContainer {
+  flex: 1;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/bg.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin: -72px 0 0;
+  min-height: 100vh;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.homeContent {
+  max-width: 1200px;
+  width: 90%;
+  text-align: center;
+  padding: 3.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 4rem;
+  margin: 0 0 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: normal;
+  opacity: 0.9;
+  margin-top: 1.5rem;
+  color: #00b894;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.mainText {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  margin: 3rem auto;
+  color: #f1f1f1;
+  max-width: 800px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 4rem;
+  padding: 0 2rem;
+}
+
+.featureItem {
+  padding: 3rem 2.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.featureItem:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.featureItem h3 {
+  font-size: 1.8rem;
+  margin: 0 0 1.5rem;
+  color: #00b894;
+}
+
+.featureItem p {
+  font-size: 1.2rem;
+  margin: 0 0 2rem;
+  line-height: 1.6;
+}
+
+.ctaLink {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #0984e3;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  min-width: 200px;
+}
+
+.ctaLink:hover {
+  background: #0773c5;
+  transform: scale(1.05);
+  color: white;
+  text-decoration: none;
+}
+
+.rocketButton {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+  width: auto;
+  min-width: 150px;
+  padding: 0.8rem 1.5rem;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.missionButton {
+  background-color: #00b894;
+  color: white;
+  border: 1px solid #00b894;
+  width: auto;
+  min-width: 150px;
+  padding: 0.8rem 1.5rem;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.rocketButton:hover,
+.rocketButton:active {
+  background-color: #0056b3;
+  color: white;
+}
+
+.missionButton:hover,
+.missionButton:active {
+  background-color: #00a382;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .homeContainer {
+    margin: 0;
+    padding: 1rem;
+    padding-top: 5rem;
+    background-attachment: scroll;
+  }
+
+  .homeContent {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .mainText {
+    font-size: 1.1rem;
+    margin: 1.5rem auto;
+    padding: 0 0.5rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0;
+    margin-top: 2rem;
+  }
+
+  .featureItem {
+    padding: 2rem 1.5rem;
+  }
+
+  .featureItem h3 {
+    font-size: 1.5rem;
+  }
+
+  .featureItem p {
+    font-size: 1rem;
+  }
+
+  .rocketButton {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    height: auto;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .rocketButton:active {
+    transform: scale(0.98);
+  }
+
+  .missionButton {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    height: auto;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .missionButton:active {
+    transform: scale(0.98);
+  }
+} 

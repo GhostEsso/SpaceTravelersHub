@@ -1,10 +1,22 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { reserveRocket } from '../../redux/rockets/RocketsSlice';
+import { FetchData } from '../../redux/rockets/Api';
 import styles from './rocket.module.css';
 
 const RocketList = () => {
   const { rockets, status, error } = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (rockets.length === 0) {
+      dispatch(FetchData());
+    }
+  }, [dispatch, rockets.length]);
+
+  const handleReserve = (rocketId) => {
+    dispatch(reserveRocket(rocketId));
+  };
 
   if (status === 'loading') {
     return (
@@ -48,15 +60,15 @@ const RocketList = () => {
           <div className="details">
             <h2>{rocket.rocket_name}</h2>
             <p>
-              <span className={rocket.reserved ? styles.badge : ''}>
-                {rocket.reserved ? 'RÉSERVÉ' : ''}
-              </span>
+              {rocket.reserved && (
+                <span className={styles.badge}>RÉSERVÉ</span>
+              )}
               {rocket.description}
             </p>
             <button
-              className={`${rocket.reserved ? styles.reserve : styles.unreserve}`}
-              onClick={() => dispatch(reserveRocket(rocket.id))}
               type="button"
+              className={rocket.reserved ? styles.reserve : styles.unreserve}
+              onClick={() => handleReserve(rocket.id)}
             >
               {rocket.reserved ? 'Annuler la réservation' : 'Réserver la fusée'}
             </button>
